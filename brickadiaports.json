@@ -1,7 +1,7 @@
 [
   {
     "Name": "GamePort",
-    "Description": "Brickadia Game UDP Port",
+    "Description": "Brickadia game UDP port",
     "Port": 7777,
     "Protocol": "UDP",
     "Ref": "GamePort"
