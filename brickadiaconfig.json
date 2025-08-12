@@ -20,7 +20,7 @@
   },
   {
     "DisplayName": "World",
-    "Description": "Saved world name to load on startup (loads from Saved/Worlds). Leave blank to start fresh or use defaults.",
+    "Description": "Saved world name to load on startup (loads from Saved/Worlds). Leave blank to start fresh or generate a new world.",
     "FieldName": "World",
     "InputType": "text",
     "Category": "Server Settings",
