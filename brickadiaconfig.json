@@ -1,1 +1,43 @@
-[]
+[
+  {
+    "DisplayName": "Hosting Token",
+    "Description": "Paste the Brickadia dedicated server hosting token (from your account in-game/website).",
+    "FieldName": "HostingToken",
+    "InputType": "password",
+    "Category": "Server Settings",
+    "Required": true,
+    "DefaultValue": ""
+  },
+  {
+    "DisplayName": "Max Players",
+    "Description": "Maximum number of players allowed on the server.",
+    "FieldName": "MaxPlayers",
+    "InputType": "number",
+    "Category": "Server Settings",
+    "minValue": "1",
+    "maxValue": "100",
+    "DefaultValue": "10"
+  },
+  {
+    "DisplayName": "World",
+    "Description": "Saved world name to load on startup (loads from Saved/Worlds). Leave blank to start fresh or use defaults.",
+    "FieldName": "World",
+    "InputType": "text",
+    "Category": "Server Settings",
+    "DefaultValue": "",
+    "IncludeInCommandLine": true,
+    "ParamFieldName": "world",
+    "SkipIfEmpty": true
+  },
+  {
+    "DisplayName": "Server Password",
+    "Description": "Optional password required to join. Leave blank for no password.",
+    "FieldName": "ServerPassword",
+    "InputType": "password",
+    "Category": "Server Settings",
+    "DefaultValue": "",
+    "IncludeInCommandLine": true,
+    "ParamFieldName": "password",
+    "SkipIfEmpty": true
+  }
+]
