@@ -1,5 +1,9 @@
+; ================================
+; Brickadia Dedicated Server KVP
+; ================================
+
 Meta.DisplayName=Brickadia
-Meta.Description=A server for Brickadia
+Meta.Description=Brickadia dedicated server managed by AMP (via SteamCMD)
 Meta.Author=MoonWolf63
 Meta.URL=https://github.com/MoonWolf63/AMP
 Meta.OS=3
@@ -15,17 +19,18 @@ App.WorkingDir=3017590
 App.ExecutableLinux=3017590/Brickadia/Binaries/Linux/BrickadiaServer-Linux-Shipping
 App.ExecutableWin=3017590\Brickadia\Binaries\Win64\BrickadiaServer-Win64-Shipping.exe
 
-; Console/process
+; Console / process behavior
 App.HasReadableConsole=true
 App.HasWritableConsole=true
 App.ExitMethod=OS_CLOSE
-; Optional: comment in after you confirm the exact line in your console
+App.RapidStartup=false
+; Use a line your Brickadia console actually prints when ready:
 ; Console.AppReadyRegex=Finished preloading primary assets
 
 ; Launch
 App.CommandLineParameterDelimiter= 
 App.CommandLineParameterFormat=-{0}={1}
-App.CommandLineArgs=+server +log +port={{$ApplicationPort1}} +token={{HostingToken}} +maxplayers={{MaxPlayers}} +world={{World}} +environment={{Environment}}
+App.CommandLineArgs=-server -log -port={{$ApplicationPort1}} {{$FormattedArgs}}
 App.PrimaryApplicationPortRef=GamePort
 
 ; Updates (SteamCMD)
