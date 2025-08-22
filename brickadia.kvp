@@ -1,51 +1,33 @@
-; ===== Brickadia (Steam AppID 3017590) – AMP Generic Module Template =====
-
-; --- Metadata ---
-Meta.DisplayName=Brickadia
-Meta.Description=Brickadia dedicated server managed by AMP (SteamCMD install/update).
-; 1=Windows, 2=Linux, 3=Both
-Meta.OS=3
-Meta.Author=MoonWolf+GPT
-Meta.URL=https://brickadia.com
+App.AdminMethod=STDIO
+App.ApplicationReadyMode=Immediate
+App.BaseDirectory=./brickadia/3017590/
+App.CommandLineArgs=-server -log -port={{gameport}} -token={{HostingToken}} -maxplayers={{MaxPlayers}} -world={{World}} -environment={{Environment}}
+App.CommandLineParameterDelimiter= 
+App.CommandLineParameterFormat=-{0} "{1}"
+App.DisplayName=Brickadia
+App.EnvironmentVariables={"LD_LIBRARY_PATH": "./linux64:%LD_LIBRARY_PATH%", "SteamAppId": "3017590"}
+App.ExecutableLinux=3017590/Brickadia/Binaries/Linux/BrickadiaServer-Linux-Shipping
+App.ExecutableWin=3017590\Brickadia\Binaries\Win64\BrickadiaServer-Win64-Shipping.exe
+App.ExitMethod=Kill
+App.ExitString=stop
+App.HasReadableConsole=true
+App.HasWritableConsole=true
+App.RapidStartup=false
+App.RootDir=./brickadia/
+App.UpdateSource=Multi
+App.UpdateSources=[{"UpdateStageName": "SteamCMD Download","UpdateSourcePlatform": "All", "UpdateSource": "SteamCMD", "UpdateSourceData": "3017590"}]
+App.WorkingDir=3017590
+Console.AppReadyRegex=^Server is ready.$
+Console.ThrowawayMessageRegex=^(WARNING|ERROR): Shader.+$
+Console.UserChatRegex=^(?<username>.+?): (?<message>.+)$
+Console.UserJoinRegex=^User (?<username>.+?) \((?<userid>-?d+)\) connected from \[::ffff:(?<endpoint>.+?)\]$
+Console.UserLeaveRegex=^User (?<username>.+?) \((?<userid>-?d+)\) disconnected\. Reason: (.+?)$
+Meta.Author=MoonWolf63
 Meta.ConfigManifest=brickadiaconfig.json
 Meta.ConfigRoot=brickadia.kvp
-; Define a minimal config version and minimum AMP version for compatibility
-Meta.ConfigVersion=1
-Meta.MinAMPVersion=2.4.0.0
-
-; --- App paths/behavior ---
-App.DisplayName=Brickadia
-; AMP keeps server files inside this directory
-App.RootDir=./brickadia/
-; SteamCMD installs into a folder named after the AppID by default
-App.WorkingDir=3017590
-App.ExecutableWin=3017590\Brickadia\Binaries\Win64\BrickadiaServer-Win64-Shipping.exe
-App.ExecutableLinux=3017590/Brickadia/Binaries/Linux/BrickadiaServer-Linux-Shipping
-App.HasWriteableConsole=True
-App.HasReadableConsole=True
-; Bind to all interfaces by default
-App.ApplicationIPBinding=0.0.0.0
-; Include the port definition file so AMP knows what ports to allocate
-App.Ports=@IncludeJson[brickadiaports.json]
-; Reference the primary application port defined in brickadiaports.json
-App.PrimaryApplicationPortRef=GamePort
-; Brickadia server uses standard console, no separate admin/RCON port
-App.AdminPortRef=0
-; Allow AMP to download updates anonymously via SteamCMD
-App.SteamUpdateAnonymousLogin=True
-; Instruct AMP how to download and update the server via SteamCMD
-App.UpdateSources=[{"UpdateStageName": "SteamCMD Download", "UpdateSourcePlatform": "All", "UpdateSource": "SteamCMD", "UpdateSourceData": "3017590"}]
-; Tell AMP how to close the server process on shutdown
-App.ExitMethod=OS_CLOSE
-
-; --- Launch ---
-; Format for adding parameters from the configuration manifest
-App.CommandLineParameterFormat=-{0}={1}
-; Base command-line arguments
-; {{$ApplicationPort1}} resolves to the dynamically-assigned GamePort.
-; {{$FormattedArgs}} appends any settings marked IncludeInCommandLine=true from brickadiaconfig.json using the format above.
-App.CommandLineArgs=-server -log -port={{$ApplicationPort1}} -token {{HostingToken}} -maxplayers {{MaxPlayers}} {{$FormattedArgs}}
-
-; --- Console readiness ---
-; When this regex appears in the console, AMP marks the app as "ready"
-Console.AppReadyRegex=Finished preloading primary assets
+Meta.Description=A server for brickadia
+Meta.DisplayImageSource=steam:2199420
+Meta.DisplayName=Brickadia
+Meta.EndpointURIFormat=
+Meta.OS=3
+Meta.URL=https://github.com/MoonWolf63/AMP
