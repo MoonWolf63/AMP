@@ -25,7 +25,7 @@ App.ExitMethod=OS_CLOSE
 ; Launch
 App.CommandLineParameterDelimiter= 
 App.CommandLineParameterFormat=-{0}={1}
-App.CommandLineArgs=-server -log -port={{$ApplicationPort1}} -token={{HostingToken}} -maxplayers={{MaxPlayers}} -world={{World}} -environment={{Environment}}
+App.CommandLineArgs=+server +log +port={{$ApplicationPort1}} +token={{HostingToken}} +maxplayers={{MaxPlayers}} +world={{World}} +environment={{Environment}}
 App.PrimaryApplicationPortRef=GamePort
 
 ; Updates (SteamCMD)
