@@ -11,16 +11,15 @@ App.DisplayName=Brickadia
 App.RootDir=./brickadia/
 App.WorkingDir=3017590
 
-; Executables (relative to RootDir)
+; Executables relative to RootDir
 App.ExecutableLinux=3017590/Brickadia/Binaries/Linux/BrickadiaServer-Linux-Shipping
 App.ExecutableWin=3017590\Brickadia\Binaries\Win64\BrickadiaServer-Win64-Shipping.exe
 
-; Console / process behavior
+; Console/process
 App.HasReadableConsole=true
 App.HasWritableConsole=true
 App.ExitMethod=OS_CLOSE
-App.RapidStartup=false
-; (Optional) comment this out if unsure:
+; Optional: comment in after you confirm the exact line in your console
 ; Console.AppReadyRegex=Finished preloading primary assets
 
 ; Launch
